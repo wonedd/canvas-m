@@ -27,10 +27,10 @@ class Overworld {
  
        //Draw Game Objects
        Object.values(this.map.gameObjects).sort((a,b) => {
-        return a.y - b.y;
-      }).forEach(object => {
-        object.sprite.draw(this.ctx, cameraPerson);
-      })
+         return a.y - b.y;
+       }).forEach(object => {
+         object.sprite.draw(this.ctx, cameraPerson);
+       })
  
        //Draw Upper layer
        this.map.drawUpperImage(this.ctx, cameraPerson);
@@ -41,7 +41,7 @@ class Overworld {
      }
      step();
   }
-
+ 
   bindActionInput() {
     new KeyPressListener("Enter", () => {
       //Is there a person here to talk to?
@@ -64,23 +64,22 @@ class Overworld {
    this.map.mountObjects();
   }
  
- 
   init() {
-   this.map = new OverworldMap(window.OverworldMaps.Beach);
-
+   this.startMap(window.OverworldMaps.StartRoom);
  
-
+ 
    this.bindActionInput();
    this.bindHeroPositionCheck();
-   
+ 
    this.directionInput = new DirectionInput();
    this.directionInput.init();
  
    this.startGameLoop();
-
- this.map.startCutscene([
-      { type: "textMessage", text: "WHY HELLO THERE!"},
-     
-    ])
-  }
+ 
+ 
+  this.map.startCutscene([
+  
+ { type: "textMessage", text: "Finalmente consegui te trazer aqui. É pouco o que consigo dizer e muito o que sinto. Nunca sonhei nada parecido, eu vejo você e isso me preenche, de fato é amar! Eu quero cada parte do caminho, ninguém vai estar sozinho, enfim... Vamos lá fora!"
+  }])
+}
  }

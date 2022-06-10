@@ -12,7 +12,7 @@ class TextMessage {
 
     this.element.innerHTML = (`
       <p class="TextMessage_p">${this.text}</p>
-      <button class="TextMessage_button">Next</button>
+      <button class="TextMessage_button">PRESS ENTER</button>
     `)
 
     this.element.querySelector("button").addEventListener("click", () => {
@@ -27,7 +27,7 @@ class TextMessage {
       this.actionListener.unbind();
       this.done();
     })
-
+    
   }
 
   done() {

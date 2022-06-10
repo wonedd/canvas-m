@@ -13,22 +13,79 @@
 }
 
 body {
-  background: #333;
+  background: rgb(26, 14, 1);
   padding: 0;
   margin: 0;
   overflow: hidden;
+
+  cursor: pointer;
+ 
 }
+
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+
 
 .game-container {
   position: relative; 
   width: 352px;
   height: 235px;
   margin: 0 auto;
-  outline: 1px solid #fff;
+  border: 1px solid  var(--menu-background);
 
-  transform: scale(2) translateY(50%);
+  transform: scale(2.5) translateY(50%);
 }
 
 .game-container canvas {
   image-rendering: pixelated;
+}
+.none{
+  opacity:0;
+  transition:2s;
+}
+
+.loading-box{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+ 
+  background-color:rgba(20, 11, 1, 1);
+
+ 
+}
+
+.loading{
+  animation: is-rotating 1s linear infinite;
+  border: 6px solid  var(--menu-background);
+  border-radius: 50%;
+  border-top-color: #0c7212;
+  height: 50px;
+  width: 50px;
+  margin: 350px auto;
+
+}
+
+.tap-screen{
+  font-size: 1rem;
+  font-family: sans-serif;
+
+  color: var(--menu-background);
+  border: none;
+  position: absolute;
+  top: 55%;
+  left:44.5%;
+  
+  animation: blink 1.2s linear infinite;
+
+}
+
+@keyframes blink{
+  to{
+    opacity: 0;
+  }
 }
